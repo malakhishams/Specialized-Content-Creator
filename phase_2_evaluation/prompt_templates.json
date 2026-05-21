@@ -1,0 +1,7 @@
+{
+  "zero_shot": "Summarize the following IT support ticket in one sentence:\nTicket: {ticket}\nSummary:",
+  
+  "few_shot": "Summarize the following IT support ticket in one sentence:\nHere are some examples:\n\nTicket: Resolve issues related to digital marketing campaigns.\nSummary: User requests resolution of issues related to digital marketing campaigns.\n\nTicket: Printer not working, tried restarting and checking connections after installing new driver.\nSummary: User reports printer not working despite restarting and checking connections after installing new driver.\n\nNow summarize this ticket:\nTicket: {ticket}\nSummary:",
+  
+  "chain_of_thought": "Summarize the following IT support ticket in one concise sentence. Think step by step:\n1. Identify the main problem\n2. Identify who is affected\n3. Identify what has been tried\n4. Write a one sentence summary\n\nTicket: {ticket}\n\nStep by step:"
+}
