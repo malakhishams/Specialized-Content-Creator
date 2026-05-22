@@ -101,7 +101,7 @@ responses = {       # total of 40 responses
 }
 
 
-if os.path.exists(r"E:\VS Code stuff\NLP Workspace\generated_responses.json"):
+if os.path.exists(r"generated_responses.json"):
     print("Responses already exist, skipping generation...")
 else:
 
