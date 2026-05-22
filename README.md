@@ -13,19 +13,25 @@ This project is a complete NLP pipeline built as part of Sprints AI scholarship 
 
 ```
 specialized-content-generator/
-├── fine_tuning_data/
-│   └── custom_dataset.txt          # 60 IT support tickets used for fine-tuning
+├── data/
+│   ├── fine_tuning_data/
+│   │   └── custom_dataset.txt          # 60 IT support tickets used for fine-tuning
+│   └── it_support_tickets/
+│       └── IT Support Ticket Data.csv  # Raw IT support ticket dataset
 ├── fine_tuned_model_checkpoint/
-│   └── model_weights.pt            # Saved fine-tuned model weights
+│   └── model_weights.pt                # Not included — run fine_tuning_script.py to generate
 ├── src/
-│   ├── basic_transformer_block.py  # Custom Transformer block implementation
-│   └── fine_tuning_script.py       # GPT-2 fine-tuning pipeline
+│   ├── basic_transformer_block.py      # Custom Transformer block implementation
+│   └── fine_tuning_script.py           # GPT-2 fine-tuning pipeline
 ├── phase_2_evaluation/
-│   ├── prompt_templates.json       # Zero-Shot, Few-Shot, CoT prompts
-│   ├── generated_responses.json    # 40 generated responses
-│   ├── evaluation_script.py        # BLEU + ROUGE evaluation script
-│   └── evaluation_summary.md       # Analysis report
-└── comparison_report.md            # Base vs fine-tuned GPT-2 comparison
+│   ├── prompt_templates.json           # Zero-Shot, Few-Shot, CoT prompts
+│   ├── generated_responses.json        # 40 generated responses
+│   ├── evaluation_script.py            # BLEU + ROUGE evaluation script
+│   └── evaluation_summary.md           # Analysis report
+├── .gitattributes
+├── .gitignore
+├── comparison_report.md                # Base vs fine-tuned GPT-2 comparison
+└── README.md
 ```
 
 ---
@@ -52,6 +58,8 @@ output = block(x)
 - **Dataset:** 60 IT support tickets (Technical Support department)
 - **Training:** 5 epochs on CPU/GPU
 - **Result:** Fine-tuned model generates domain-specific IT support text
+
+> **Note:** Model weights are not included in this repository. Run `python src/fine_tuning_script.py` to generate them locally.
 
 ---
 
@@ -132,8 +140,8 @@ Extract the primary technical component mentioned in each IT support ticket.
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/malakhishams/Specialized-Content-Generator.git
-cd Specialized-Content-Generator
+git clone https://github.com/malakhishams/Specialized-Content-Creator.git
+cd Specialized-Content-Creator
 ```
 
 ### 2. Install dependencies
@@ -172,7 +180,7 @@ python phase_2_evaluation/evaluation_script.py
 
 ---
 
-##  License
+## License
 
 This project was built as part of Sprints AI scholarship program for educational purposes.
 
