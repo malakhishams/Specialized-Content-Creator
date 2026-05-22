@@ -18,7 +18,7 @@ from torch.optim import AdamW
 
 """# Read & Clean Data"""
 
-df = pd.read_csv('/content/IT Support Ticket Data.csv', quotechar='"', doublequote=True, engine='python')
+df = pd.read_csv('data\it_support_tickets\IT Support Ticket Data.csv', quotechar='"', doublequote=True, engine='python')
 
 def clean_text(text):
     text = str(text)                  # handle NaN values
@@ -55,7 +55,7 @@ import os
 
 os.makedirs('fine_tuning_data', exist_ok=True)
 
-with open("fine_tuning_data/custom_dataset.txt", "w") as f:
+with open("data/fine_tuning_data/custom_dataset.txt", "w") as f:
     for ticket in texts:
         f.write(ticket + "\n\n")
 print("Dataset saved!")
